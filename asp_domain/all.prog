@@ -1,0 +1,100 @@
+#include <iclingo>.
+
+
+:- not inlane(l3,n-1). 
+
+
+
+
+
+#program cumulative(n).
+
+1{
+	changeleft(I); 
+	changeright(I); 
+	forward(I); 
+	turnleft(I); 
+	turnright(I);
+	stop(I)
+}1 :- not noop(I), I>0, I=n-1.
+
+noop(I) :- noop(I), I>0, I=n-1.
+
+
+
+
+#show changeleft/1.
+#show changeright/1.
+#show forward/1.
+#show turnleft/1.
+#show turnright/1.
+#show stop/1.
+#show inlane/2.
+
+
+
+
+#program cumulative(n).
+
+
+%inlane(L2,I) :- changeleft(I), inlane(L1,I-1), leftof(L2,L1), I>0, I=n-1. 
+%-inlane(L,I) :- changeleft(I), inlane(L,I-1), lane(L), I>0, I=n-1. 
+% :- changeleft(I), inlane(L,I-1), leftmost(L). 
+
+
+%-leftmost(L) :- leftof(L1,L), lane(L), lane(L1). 
+%leftmost(L) :- not -leftmost(L), lane(L), lane(L1). 
+%-rightmost(L) :- leftof(L,L1), lane(L), lane(L1). 
+%rightmost(L) :- not -rightmost(L), lane(L), lane(L1). 
+
+%-inlane(L, I-1) :- not inlane(L,I-1), lane(L), I>0, I=n-1.
+
+%%%%
+% Inertial rule
+%%%%
+
+inlane(L, I) :- inlane(L, I-1), not -inlane(L, I), lane(L), I>0, I=n-1. 
+-inlane(L, I) :- -inlane(L, I-1), not inlane(L, I), lane(L), I>0, I=n-1. 
+
+
+
+%changeright(L2,I) : lane(L2); 
+%forward(I); 
+%turnleft(I); 
+%turnright(I);
+%stop(I)
+
+
+
+
+%#program base.
+
+road(r0). 
+road(r1). 
+road(r2). 
+
+lane(l0). 
+lane(l1). 
+lane(l2). 
+lane(l3). 
+lane(l4). 
+lane(l5). 
+lane(l6). 
+lane(l7). 
+lane(l8). 
+lane(l9). 
+lane(l10). 
+lane(l11). 
+
+leftof(l2,l3). 
+leftof(l1,l0).
+leftof(l10,l11).
+leftof(l9,l8).
+leftof(l6,l7).
+leftof(l5,l4).
+
+
+shop(s0). 
+eastof(s0,r2). 
+
+inlane(l3,0). 
