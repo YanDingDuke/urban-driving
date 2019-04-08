@@ -9,6 +9,7 @@ continue(I+1) :- changeright(I).
 continue(I+1) :- forward(I).
 continue(I+1) :- turnleft(I).
 continue(I+1) :- turnright(I).
+continue(I+1) :- unpark(I).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%  At each step, chose at least one and at most one action  %%%%%

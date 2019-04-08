@@ -10,7 +10,7 @@ initpark(1).
 %%%%%  stop at <n> if goal achieved at <n>-1                        %%%%%
 %%%%%  constraint: stop at <n>                                      %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-stop(n) :- inlane(-1,n-1), parkedat(G,n-1), goal(G).
+stop(n) :- inlane(-1,n), parkedat(G,n), goal(G).
 :- not stop(n).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
