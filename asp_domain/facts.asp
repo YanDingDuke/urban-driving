@@ -1,29 +1,43 @@
-#program base.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  Domain Knowledge                                             %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-road(r0). 
-road(r1). 
-road(r2). 
+%% Roads
+road(0..2).
+%% Lanes
+lane(0..11).
+%% Shops
+shop(0..5).
 
-lane(l0). 
-lane(l1). 
-lane(l2). 
-lane(l3). 
-lane(l4). 
-lane(l5). 
-lane(l6). 
-lane(l7). 
-lane(l8). 
-lane(l9). 
-lane(l10). 
-lane(l11). 
+%% Lane change rules
+%% leftof(2,3) is read as lane 2
+%% is to the left of lane 3
+leftof(2,3).
+leftof(1,0).
+leftof(10,11).
+leftof(9,8).
+leftof(6,7).
+leftof(5,4).
 
-leftof(l2,l3). 
-leftof(l1,l0).
-leftof(l10,l11).
-leftof(l9,l8).
-leftof(l6,l7).
-leftof(l5,l4).
+%% right turn rules
+%% rturn(8,7) is read as the agent can
+%% take a right turn from lane 8 and will
+%% end up in lane 7
+rturn(8,7).
+rturn(4,0).
 
+%% left turn rules
+%% lturn(2,6) is read as the agent can take
+%% a left turn from lane 2 and will end up in lane 6
+lturn(2,6).
+lturn(5,10).
 
-shop(s0). 
-eastof(s0,r2). 
+%% drive straight through an intersection rules
+%% passsignal(3,11) is read as the agent can drive
+%% forward at an intersection and will end up in
+%% lane 11 after crossing the intersection
+passsignal(3,11).
+passsignal(8,0).
+
+%% eastof(Road, Lane)
+eastof(0,2).
