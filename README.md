@@ -11,6 +11,7 @@ Urban-driving applies AI planning techniques to autonomous driving.
   - **park(I)** : The agent exits a road and parks
   - **unpark(I)** : The agent unparks and enters a road
   - **stop(I)** : The agent stops
+  - **continue(I)** : The agent continues to drive in its lane.
 
 ## States
   - **inlane(L,I)** : The agent is in the lane L at step I
