@@ -30,9 +30,9 @@ inlane(-1,I+1) :- park(I), inlane(L,I), lane(L), step(I), through(S,L), shop(S),
 parkedat(S,I+1) :- park(I), inlane(L,I), lane(L), through(S,L), shop(S), step(I), I>=0, I<n.
 
 %% 7) Unpark
-%% inlane(L,I+1) :- unpark(I), inlane(-1,I), through(S,L), lane(L), shop(S), parkedat(S,I), step(I), I>=0, I<n.
-%% -inlane(-1,I+1) :- unpark(I), step(I), I>=0, I<n.
-%% -parkedat(S,I+1) :-unpark(I), parkedat(S,I), shop(S), step(I), I>=0, I<n.
+inlane(L,I+1) :- unpark(I), inlane(-1,I), through(S,L), lane(L), shop(S), parkedat(S,I), step(I), I>=0, I<n.
+-inlane(-1,I+1) :- unpark(I), step(I), I>=0, I<n.
+-parkedat(S,I+1) :-unpark(I), parkedat(S,I), shop(S), step(I), I>=0, I<n.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%  Inertial rule                                                             %%%%%

@@ -41,3 +41,4 @@ passsignal(8,0).
 
 %% through(0, 7) is read as shop 0 is reachable through lane 7
 through(0,7).
+through(1,3).

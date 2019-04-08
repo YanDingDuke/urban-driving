@@ -3,16 +3,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 goal(0).
-init(8).
+initlane(-1).
+initpark(1).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%  stop at n if goal achieved at n-1                            %%%%%
-%%%%%  stop at <n>                                                  %%%%%
+%%%%%  stop at <n> if goal achieved at <n>-1                        %%%%%
+%%%%%  constraint: stop at <n>                                      %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 stop(n) :- inlane(-1,n-1), parkedat(G,n-1), goal(G).
 :- not stop(n).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%  Initial status of the agent: in the lane <init>              %%%%%
+%%%%%  Initial status of the agent: inlane and parkedat             %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-inlane(L,0) :- init(L).
+inlane(L,0) :- initlane(L).
+parkedat(S,0) :- initpark(S).
