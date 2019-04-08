@@ -35,9 +35,9 @@ not turnleft(I), not turnright(I), not stop(I), not park(I), not unpark(I), step
 #show forward/1.
 #show turnleft/1.
 #show turnright/1.
-#show inlane/2.
+%#show inlane/2.
 #show continue/1.
 #show stop/1.
 #show park/1.
-#show parkedat/2.
+%#show parkedat/2.
 #show unpark/1.
