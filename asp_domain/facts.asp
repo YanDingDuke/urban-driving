@@ -5,7 +5,7 @@
 %% Roads
 road(0..2).
 %% Lanes
-lane(0..11).
+lane(-1..11).
 %% Shops
 shop(0..5).
 
@@ -39,5 +39,5 @@ lturn(5,10).
 passsignal(3,11).
 passsignal(8,0).
 
-%% eastof(Road, Lane)
-eastof(0,2).
+%% through(0, 7) is read as shop 0 is reachable through lane 7
+through(0,7).

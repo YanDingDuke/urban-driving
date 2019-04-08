@@ -21,11 +21,12 @@ continue(I+1) :- turnright(I).
 	forward(I);
 	turnleft(I);
 	turnright(I);
+	park(I);
 	stop(I)
 }1 :- not continue(I), step(I), I>=0, I<n.
 
 continue(I) :- not changeleft(I), not changeright(I), not forward(I),
-not turnleft(I), not turnright(I), not stop(I), step(I), I>=0, I<n.
+not turnleft(I), not turnright(I), not stop(I), not park(I), step(I), I>=0, I<n.
 
 
 #show changeleft/1.
@@ -36,3 +37,5 @@ not turnleft(I), not turnright(I), not stop(I), step(I), I>=0, I<n.
 #show inlane/2.
 #show continue/1.
 #show stop/1.
+#show park/1.
+#show parkedat/2.
