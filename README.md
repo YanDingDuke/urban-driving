@@ -25,7 +25,7 @@ Urban-driving applies AI planning techniques to autonomous driving.
   - **through(S,L)** : Shop S is reachable through lane L
 
 ## Domain
-![DomainGraph](/asp_domain/domain.png?raw=true "Domain Graph")
+![DomainGraph](/asp_domain/domain.jpg?raw=true "Domain Graph")
 
 ## How to run
 ```sh
