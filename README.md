@@ -27,9 +27,9 @@ Urban-driving applies AI planning techniques to autonomous driving.
 
 ## Domains
 ### Domain 1
-![Domain1](/domain1/domain.jpg?raw=true "Domain1")
+![Domain1](/domain1/domain1.jpg?raw=true "Domain1")
 ### Domain 2
-![Domain1](/domain2/domain.png?raw=true "Domain2")
+![Domain1](/domain2/domain2.png?raw=true "Domain2")
 
 ## How to run
 ```sh
