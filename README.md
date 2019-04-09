@@ -25,10 +25,13 @@ Urban-driving applies AI planning techniques to autonomous driving.
   - **passsignal(L1,L2)** : Crossing an intersection from lane L1 will lead to lane L2
   - **through(S,L)** : Shop S is reachable through lane L
 
-## Domain
-![DomainGraph](/asp_domain/domain.jpg?raw=true "Domain Graph")
+## Domains
+### Domain 1
+![Domain1](/domain1/domain.jpg?raw=true "Domain1")
+### Domain 2
+![Domain1](/domain2/domain.png?raw=true "Domain2")
 
 ## How to run
 ```sh
-$ clingo *.asp -c n=10
+$ clingo *.asp domainN/*.asp -c n=10
 ```
